@@ -8,3 +8,13 @@ Over the years, many web applications are becoming more and more susceptible to 
 Users who utilize this tool will be graded on how many of these test scripts pass. The more scripts that pass, the lower the user's overall grade will be. Within this tool, there will also be either a markdown file (.md) or text file (.txt) holding all of the information that was run within the code: how many vulnerabilities were found, how many scripts passed, and how to sanitize code correctly based off of what vulnerability was found. *This tool specifically focuses on cross-site scripting and SQL injection vulnerabilites.*
 
 ## Grade Rubric
+
+The grader that is built into SeQure will grade the web application in four categories as percentages: low, medium, high, and critical.
+
+### Low (100%-75%)
+
+### Medium (74%-50%)
+
+### High (49%-25%)
+
+### Critical (24%-0%)
