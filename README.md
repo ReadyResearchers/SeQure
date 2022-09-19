@@ -9,12 +9,12 @@ Users who utilize this tool will be graded on how many of these test scripts pas
 
 ## Grade Rubric
 
-The grader that is built into SeQure will grade the web application in four categories as percentages: low, medium, high, and critical.
+The grader that is built into SeQure will grade the web application in four categories as CVSS ratings: low, medium, high, and critical.
 
-### Low (100%-75%)
+### Low (0.1-3.9)
 
-### Medium (74%-50%)
+### Medium (4.0-6.9)
 
-### High (49%-25%)
+### High(7.0-8.9)
 
-### Critical (24%-0%)
+### Critical (9.0-10.0)
