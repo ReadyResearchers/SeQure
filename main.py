@@ -65,7 +65,7 @@ def scan_xss(url):
     js_script = "<Script>alert('hi')</scripT>" # script 1
     js_script2 = "<scr><script><ipt>alert('hello')</scripT>" # script 2
     # returning value
-    is_vulnerable = print(f"[+] {False}. This is not vulnerable to any of the passing scripts.")
+    is_vulnerable = False
     # iterate over all forms
     for form in forms: # for loop for script 1
         form_details = get_form_details(form)
@@ -92,8 +92,12 @@ if __name__ == "__main__":
     clear()
     print("[+] Welcome to SeQure!\n")
     url = "https://xss-game.appspot.com/level1/frame"
+    url2 = "https://lex.chompe.rs/?page_id=2"
+    
     print(scan_xss(url))
-
+    print("\n-------------------------------------------------")
+    print(scan_xss(url2))
+    
 # Below are the links I am testing: 
 # https://lex.chompe.rs/?page_id=2
 # https://xss-game.appspot.com/level1/frame
