@@ -62,8 +62,9 @@ def scan_xss(url):
     # get all the forms from the URL
     forms = get_all_forms(url)
     print(f"[+] Detected {len(forms)} forms on {url}.")
-    js_script = "<Script>alert('hi')</scripT>" # script 1
-    js_script2 = "<scr><script><ipt>alert('hello')</scripT>" # script 2
+    js_script = "<Script>alert('hi')</scripT>" # payload 1
+    js_script2 = "<scr><script><ipt>alert('hello')</scripT>" # payload 2
+    js_script3 = "'-prompt(8)-'" # payload 3
     # returning value
     is_vulnerable = False
     # iterate over all forms
@@ -81,68 +82,30 @@ def scan_xss(url):
         form_details = get_form_details(form)
         content = submit_form(form_details, url, js_script2).content.decode()
         if js_script2 in content:
-            print(f"[+] XSS Detected on {url}")
+            # print(f"[+] XSS Detected on {url}")
+            print(f"[*] Form details:")
+            pprint(form_details)
+            is_vulnerable = print(f"[+] {True}. One or more scripts passed.")
+            
+    for form in forms: # for loop for script 3
+        form_details = get_form_details(form)
+        content = submit_form(form_details, url, js_script3).content.decode()
+        if js_script3 in content:
+            # print(f"[+] XSS Detected on {url}")
             print(f"[*] Form details:")
             pprint(form_details)
             is_vulnerable = print(f"[+] {True}. One or more scripts passed.")
     return is_vulnerable
 
-# this is the sql scan function
-#def scan_sql(url):
-#   is_vulnerable = False
-    # test on url
-    #for c in "\"'":
-        #add quote/double quote character to the URL
-        #new_url = f"{url}{c}"
-        #print("[!] Trying", new_url)
-        # make the HTTP request
-        #res = s.get(new_url)
-        #if is_vulnerable(res):
-            # SQL Injection vulnerability on the URL itself, 
-            # no need to proceed for extracting forms and submitting them
-            #print("[+] SQL Injection vulnerabilty detected, link: ", new_url)
-            #return
-    # test on HTML forms
-    #forms = get_all_forms(url)
-    #print(f"[+] Detected {len(forms)} forms on {url}.")
-    #for form in forms:
-        #form_details = get_form_details(form)
-        #for c in "\"'":
-            #the data body we want to submit
-            #data = {}
-            #for input_tag in form_details["inputs"]:
-                #if input_tag["value"] or input_tag["type"] == "hidden":
-                    # any input form that has some value or hidden,
-                    # just use it in the form body
-                    #try:
-                        #data[input_tag["name"]] = input_tag["value"] + c
-                    #except:
-                        #pass
-                #elif input_tag["type"] != "submit":
-                    # all others except submit, use some junk data with special character
-                    #data[input_tag["name"]] = f"test{c}"
-            # join the url with the action (form request URL)
-            #url = urljoin(url, form_details["action"])
-            #if form_details["method"] == "post":
-                #res = s.post(url, data=data)
-            #elif form_details["method"] == "get":
-                #res = s.get(url, params=data)
-            # test whether the resulting page is vulnerable
-            #if is_vulnerable(res):
-                #print("[+] SQL Injection vulnerability detected, link: ", url)
-                #print("[+] Form: ")
-                #pprint(form_details)
-                #break
-
 # this is the main function
 if __name__ == "__main__":
     clear = lambda: os.system('cls')
-    clear()
+    clear() # clears screen
     print("[+] Welcome to SeQure!\n")
     # url2 = input("Enter the second URL you would like to check: ")
     cont = 'Y'
-    
-    while (cont == 'Y'):
+
+    while (cont == 'Y' or cont == "y"):
         url = input("[+] Enter the URL you would like to check: ")
         print(scan_xss(url))
         print("\n-------------------------------------------------")
