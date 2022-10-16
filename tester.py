@@ -6,27 +6,6 @@ import time
 import os
 
 driver = webdriver.Chrome(executable_path="C:/Users/alexi/Desktop/chromedriver/chromedriver") # path to chromedriver
-class testingScripts(unittest.TestCase):
-    def setUp(self):
-        # create a new session
-        self.driver = webdriver.Chrome(executable_path="C:/Users/alexi/Desktop/chromedriver/chromedriver")
-        self.driver.implicitly_wait(15)
-        self.driver.get("https://xss-game.appspot.com/level1/frame")
-    
-    def test_search(self):
-        self.search_field = self.driver.find_element(By.ID, 'query')
-        
-        with open('xss-payload-list.txt') as f:
-            contents = f.read()
-        
-            # enter search keyword and submit
-            self.search_field.send_keys(contents)
-            button = driver.find_element(By.ID, 'button')
-            driver.execute_script("arguments[0].click();", button)
-            # self.search_field.submit()
-
-    def tearDown(self):
-        self.driver.quit()
 
 def sendScripts():
     # This function works
@@ -43,11 +22,8 @@ if __name__ == "__main__":
     clear = lambda: os.system('cls')
     clear() # clear screen
     print("[+] Welcome to SeQure!\n") # starting prompt
-    # url = input("[+] Enter the URL you would like to check: ")
-    # driver.get(url) # opens an automated browser
-    # sendScripts()
-    unittest.main() # UNIT TESTING FOR SELENIUM
+    url = input("[+] Enter the URL you would like to check: ")
+    driver.get(url) # opens an automated browser
+    sendScripts()
     
     # https://xss-game.appspot.com/level1/frame
-
-
