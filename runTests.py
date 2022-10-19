@@ -1,15 +1,19 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import time
 import os
 
 
 def testScripts(script):
-    driver = webdriver.Chrome(executable_path="C:/Users/alexi/Desktop/chromedriver/chromedriver")
-    driver.get("https://xss-game.appspot.com/level1/frame")
-    search_field = driver.find_element(By.ID, 'query') # finds id named query
-    search_field.send_keys(script) # searches for query;send script
-    button = driver.find_element(By.ID, "button") # creates button
+    s = Service("C:/Users/alexi/Desktop/chromedriver/chromedriver")
+    driver = webdriver.Chrome(service=s)
+    driver.get("https://lex.chompe.rs/contact-form-v4-0-1/")
+    name_field = driver.find_element(By.CLASS_NAME, 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required') # 
+    #subject_field = driver.find_element(By.CLASS_NAME, 'wpcf7-form-contact-wrap your-subject')
+    name_field.send_keys(script) # searches for query;send script
+    #subject_field.send_keys(script)
+    button = driver.find_element(By.CLASS_NAME, 'wpcf7-form-control wpcf7-submit') # creates button
     time.sleep(5)
     driver.execute_script("arguments[0].click();", button) # finds button; presses button
     time.sleep(5)
