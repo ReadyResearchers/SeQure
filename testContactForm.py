@@ -22,7 +22,7 @@ def test_send_email():
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
-        time.sleep(10)
+        #time.sleep(10)
 
     except:
         print("Element does not exist.")
