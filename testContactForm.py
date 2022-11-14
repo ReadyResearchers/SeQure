@@ -18,12 +18,38 @@ def test_setup():
 def test_send_email():
     try: # these try blocks will get what version we are working with
         driver.find_elements(By.NAME,"your-subject")
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
         #time.sleep(10)
-
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"your-email")
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"email")
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"message")
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        #time.sleep(10)
     except:
         print("Element does not exist.")
 
