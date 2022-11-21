@@ -1,7 +1,20 @@
 ![SeQure](img/sequre_logo.png)
-# SeQure
+# SeQure: Cross-Site Scripting Vulnerability Tool for WordPress Form Plugins
 
 + This is a WordPress form plugin vulnerability scanner that works with WordPress web applications that scans the web for cross-site scripting (XSS) vulnerabilities. It is to prevent and assist programmers with making sure they have sanitized and also updated plugins for stronger security for their web application.
+
+## Abstract
+- Summarizes the key challenges and results (This tool will _____)(What the heck am I doing)
+- Captures the attention of the reader
+- Convinces the reader to explore rest of senior thesis
+- References details and results whenever possible!
+- To get started, use the abstract as a “project roadmap”
+
++ What am I using this tool for
++ Talk about the risks of having a form plugin being vulnerable
++ Talk about how the tool works
++ 
+
 
 ## Overview
 
