@@ -1,8 +1,11 @@
-# for testVersions.py
+# a GUI for SeQure
 
 from tkinter import Button
 from tkinter import Canvas
 import tkinter as tk
+import os
+import time
+from tkinter.ttk import *
 
 # creates window
 window = tk.Tk()
@@ -17,10 +20,24 @@ canvas = Canvas(window, width=450, height=200)
 canvas.create_text(225, 50, text="Welcome to SeQure!", fill="black")
 canvas.create_text(225, 75, text="This is a plugin vulnerability checker!", fill="black")
 
+# defining open program
+def run_program():
+    path = 'testContactForm1.py'
+    os.startfile('"%s"' % path)
+
+def progress_bar():
+    tasks = 10
+    x = 0
+    while(x<tasks):
+        time.sleep(1)
+        bar['value']+=10
+        x+=1
+        window.update_idletasks()
+
 # creates a button
-button = Button(window, text="Run checker.", bd='5', command=window.destroy)
+bar = Progressbar(window, length=300).pack(pady=10)
+button = Button(window, text="Run checker.", command=run_program).pack(side='bottom')
 
 title.pack()
 canvas.pack()
-button.pack(side='bottom')
 window.mainloop()
