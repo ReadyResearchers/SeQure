@@ -4,22 +4,7 @@
 + This is a WordPress form plugin vulnerability scanner that works with WordPress web applications that scans the web for cross-site scripting (XSS) vulnerabilities. It is to prevent and assist programmers with making sure they have sanitized and also updated plugins for stronger security for their web application.
 
 ## Abstract
-- Summarizes the key challenges and results (This tool will _____)(What the heck am I doing)
-- Captures the attention of the reader
-- Convinces the reader to explore rest of senior thesis
-- References details and results whenever possible!
-- To get started, use the abstract as a “project roadmap”
-
-+ What am I using this tool for
-+ Talk about the risks of having a form plugin being vulnerable
-+ Talk about how the tool works
-+ 
-
-
-## Overview
-
-Over the years, many web applications are becoming more and more susceptible to being exploited by various vulnerabilities. This is done by programmers not properly sanitizing and checking the plugin code for security purposes and only focusing on functionality of their website. There are many WordPress form plugins that have various updates. However, users are still able to access older, vulnerable versions of most plugins.
-*This tool specifically focuses on cross-site scripting.*
+Over the years, many web applications are becoming more and more susceptible to being exploited by various vulnerabilities within its code. This is done by programmers not properly sanitizing and checking code that they are using to, specifically, build websites. The website builder, WordPress, for example has a feature to be able to handle “contact form” information. This includes the ability to take in information such as a name, a phone number, email address, etc. However, not all versions of these plugins are deemed safe. There are many WordPress form plugins that allow attackers to enter in cross site scripting (XSS) scripts into these input forms making the attacker able to access user information. To avoid attackers gaining access using XSS scripts, the tool SeQure will allow website users to be able to check their form plugins to make sure that they are safe for further use.
 
 ## How To Run in Terminal
 
