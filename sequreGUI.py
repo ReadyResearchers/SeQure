@@ -6,6 +6,7 @@ import tkinter as tk
 import os
 import time
 from tkinter.ttk import *
+import subprocess
 
 # creates window
 window = tk.Tk()
@@ -22,8 +23,9 @@ canvas.create_text(225, 75, text="This is a plugin vulnerability checker!", fill
 
 # defining open program
 def run_program():
-    path = 'testContactForm1.py'
-    os.startfile('"%s"' % path)
+    path = 'terminalCode.py'
+    #os.startfile('"%s"' % path)
+    subprocess.run(["python", path])
 
 def progress_bar():
     tasks = 10
