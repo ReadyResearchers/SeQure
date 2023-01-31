@@ -11,6 +11,7 @@ def reflectedCrossSite(url):
 
     # name and message  ==============================================================================
     try:
+        print("\n\t [+] Test #1")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -37,8 +38,10 @@ def reflectedCrossSite(url):
         results.append(False)
     # subject and name ======================================================================================
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #2")
         options = Options()
-        options.headless = True
+        options.headless = False
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
         driver = webdriver.Chrome(service=s, options=options) # path to chromedriver
         driver.get(url)
@@ -63,6 +66,8 @@ def reflectedCrossSite(url):
         results.append(False)
     # email and name ===========================================================================================
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #3")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -89,6 +94,8 @@ def reflectedCrossSite(url):
         results.append(False)
     # subject and message ================================================================================
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #4")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -115,6 +122,8 @@ def reflectedCrossSite(url):
         results.append(False)
     # email and subject ==========================================================================================
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #5")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -141,6 +150,8 @@ def reflectedCrossSite(url):
         results.append(False)
     # message and email =================================================================================
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #6")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -170,8 +181,10 @@ def reflectedCrossSite(url):
 
     # name and subject and email ============================================================================ 
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #7")
         options = Options()
-        options.headless = False
+        options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
         driver = webdriver.Chrome(service=s, options=options) # path to chromedriver
         driver.get(url)
@@ -185,7 +198,6 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        time.sleep(5)
         if (driver.find_element(BY.CLASS, 'wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok') == True):
             print("Email was successfully sent.")
             driver.quit() # closes the window
@@ -194,12 +206,13 @@ def reflectedCrossSite(url):
             print("Email was not sent successfully.")
             results.append(False)
     except:
-        time.sleep(5)
         print("\n\t [+] Element does not exist.")
         results.append(False)
     
     # message and subject and email ============================================================================ 
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #8")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -228,6 +241,8 @@ def reflectedCrossSite(url):
 
     # message and name and email ============================================================================ 
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #9")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
@@ -256,6 +271,8 @@ def reflectedCrossSite(url):
 
     # message and subject and name ============================================================================ 
     try:
+        print("------------------------------------------------------------------------------------------")
+        print("\n\t [+] Test #10")
         options = Options()
         options.headless = True
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
