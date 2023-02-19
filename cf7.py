@@ -28,11 +28,23 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        print(checkAlert.getText())
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     # subject and name ======================================================================================
@@ -40,7 +52,7 @@ def reflectedCrossSite(url):
         print("------------------------------------------------------------------------------------------")
         print("\n\t [+] Test #2")
         options = Options()
-        options.headless = True
+        options.headless = True 
         s = Service("C:/Users/Lex Caldwell/Downloads/chromedriver")
         driver = webdriver.Chrome(service=s, options=options) # path to chromedriver
         driver.get(url)
@@ -53,30 +65,23 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True) #####################
-        #time.sleep(5)
-        #driver.implicitly_wait(20)
+        driver.implicitly_wait(15)
         # by class name
-        #checkAlert = driver.find_element(BY.CLASS_NAME, 'wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok')
-        # by relative xpath
-        #checkAlert = driver.find_element(BY.XPATH, "//body/div[1]/main[1]/div[3]/div[1]/form[1]/div[2]")
-        # by absolute xpath
-        #checkAlert = driver.find_element(BY.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/form[1]/div[2]")
-        # by css selector
-        #checkAlert = driver.find_element(BY.CSS_SELECTOR, 'body.page-template-default.page.page-id-119.wp-embed-responsive:nth-child(2) div.wp-site-blocks:nth-child(16) main.is-layout-flow.wp-block-group:nth-child(2) div.is-layout-constrained.entry-content.wp-block-post-content:nth-child(3) div.wpcf7 form.wpcf7-form.sent > div.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok:nth-child(6)')
-        #mailSentOK = "Thank you for your message. It has been sent."
-        #print("\n\t [+] HTML elements found:\n")
-        #if (checkAlert == mailSentOK):
-            #print("\n\t [+] Email was successfully sent.")
-            #driver.quit() # closes the window
-            #results.append(True)
-        #else:
-            #print("\n\t [+] Email was not sent successfully.")
-            #results.append(False)
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        print(checkAlert)
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     # email and name ===========================================================================================
@@ -97,11 +102,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     # subject and message ================================================================================
@@ -122,11 +138,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     # email and subject ==========================================================================================
@@ -147,11 +174,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     # message and email =================================================================================
@@ -172,11 +210,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
 
@@ -201,11 +250,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
     
@@ -228,11 +288,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
 
@@ -255,11 +326,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
 
@@ -282,11 +364,22 @@ def reflectedCrossSite(url):
         # this clicks the button
         driver.execute_script("arguments[0].click();", button)
         print("\n\t [+] Button was successfully pressed:\n")
-        results.append(True)
+        driver.implicitly_wait(15)
+        # by class name
+        checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
+        mailSentOK = "Thank you for your message. It has been sent."
+        print("\n\t [+] HTML elements found:\n")
+        if (checkAlert == mailSentOK):
+            print("\n\t [+] Email was successfully sent.")
+            driver.quit() # closes the window
+            results.append(True)
+        else:
+            print("\n\t [+] Email was not sent successfully.")
+            results.append(False)
     except KeyboardInterrupt:
         print("\n\t [+] KeyboardInterrupt exception caught.")
         sys.exit()
-    else:
+    except:
         print("\n\t [+] Element does not exist.")
         results.append(False)
 
