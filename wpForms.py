@@ -68,7 +68,7 @@ def reflectedCrossSite(url):
         print("\n\t [+] Button was successfully pressed:\n")
         driver.implicitly_wait(15)
         # by class name
-        checkAlert = driver.find_element(By.CLASS_NAME, 'wpforms-confirmation-container-full')
+        checkAlert = driver.find_element(By.XPATH, "//div[@id='wpforms-133']")
         mailSentOK = "Thanks for contacting us! We will be in touch with you shortly."
         print(checkAlert)
         if (checkAlert == mailSentOK):
