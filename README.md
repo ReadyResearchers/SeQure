@@ -12,7 +12,9 @@ The program begins by prompting the user to input a URL that they would like to 
 
 ![Beginning Prompt](img/bg_prompt.png)
 
-Once the user pastes their URL inside of the prompt, then the source code for SeQure begins to run. SeQure uses an automated testing software called selenium to run the tests. Selenium is able to open a `headless` and `non-headless` option within Selenium. This means that without the headless option of selenium running that the a new automated testing browser will appear on the users screen every time the test is being run. In this way, the user can visibly see the scripts being inputted into the input fields and seeing the button being pressed.
+Once the user pastes their URL inside of the prompt, it will next prompt the user to determine which contact form plugin that they will be testing the tool against. Once that information is inputted in, the tool will begin to run its tests.
+
+SeQure uses an automated testing software called selenium to run the tests. Selenium is able to open a `headless` and `non-headless` option within Selenium. This means that without the headless option of selenium running that the a new automated testing browser will appear on the users screen every time the test is being run. In this way, the user can visibly see the scripts being inputted into the input fields and seeing the button being pressed.
 
 However, with the headless option being used the browser will not open up and it will pretend a browser is being opened and run. The user will be able to see output if an HTML element is found or if the element the code is searching for `Does not exist.` 
 
@@ -22,9 +24,7 @@ In the code itself is a list containing boolean values to determine if the scrip
 
 ![Number of tries](img/tries_prompt.png)
 
-the output above demonstrates if the scripts were not able to work meaning that the field themselves either do not exist entirely and/or the script entered did not work due to input sanitization. If the script is able to send to the owner's email, then the input fields are not sanitized correctly. If this is the case, then the Wordpress user needs to update their plugin to a more recent version of that specific plugin. On the other hand, if the input fields were properly sanitized then that means that the input fields will not allow the script to be sent to the owner making that version of a plugin safe to use.
+The output above demonstrates if the scripts were not able to work meaning that the field themselves either do not exist entirely and/or the script entered did not work due to input sanitization. If the script is able to send to the owner's email, then the input fields are not sanitized correctly. If this is the case, then the Wordpress user needs to update their plugin to a more recent version of that specific plugin. On the other hand, if the input fields were properly sanitized then that means that the input fields will not allow the script to be sent to the owner making that version of a plugin safe to use.
 
-
-## For WordPress Plugin Users!
 
 
