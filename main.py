@@ -1,6 +1,5 @@
 # import other py files
 import cf7
-import ninjaForm
 import wpForms
 import os
 
