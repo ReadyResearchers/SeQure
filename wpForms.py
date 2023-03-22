@@ -24,10 +24,9 @@ def reflectedCrossSite(url):
                 driver = webdriver.Chrome(service=s, options=options) # path to chromedriver
                 driver.get(url)
                 # This finds the element and passes in a script
-                driver.find_element(By.NAME, 'wpforms[fields][0][first]').send_keys("<script>alert('alert')</script>")
+                driver.find_element(By.NAME, 'wpforms[fields][0][first]').send_keys(line)
                 driver.find_element(By.NAME, 'wpforms[fields][0][last]').send_keys(line)
-                driver.find_element(By.NAME, 'wpforms[fields][1]').send_keys("email@email.com")
-                driver.find_element(By.NAME, 'wpforms[fields][2]').send_keys("message")
+                driver.find_element(By.NAME, 'wpforms[fields][2]').send_keys(line)
                 print("\n\t [+] HTML elements found:\n")
                 # this finds the button
                 button = driver.find_element(By.NAME, "wpforms[submit]")
@@ -37,8 +36,7 @@ def reflectedCrossSite(url):
                 driver.implicitly_wait(15)
                 # by class name
                 checkAlert = driver.find_element(By.ID, 'wpforms-confirmation-133')
-                mailSentOK = "Thanks for contacting us! We will be in touch with you shortly."
-                print(checkAlert.getText())
+                mailSentOK = driver.find_element(By.CLASS_NAME, 'wpforms-submit')
                 if (checkAlert == mailSentOK):
                     print("\n\t [+] HTML elements found:\n")
                     print("\n\t [+] Email was successfully sent.")
