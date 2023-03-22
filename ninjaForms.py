@@ -34,9 +34,8 @@ def reflectedCrossSite(url):
                 driver.implicitly_wait(15)
                 # by class name
                 checkAlert = driver.find_element(By.CLASS_NAME, 'wpcf7-response-output')
-                mailSentOK = "Thank you for your message. It has been sent."
+                mailSentOK = driver.find_element(By.CLASS_NAME, '')
                 print("\n\t [+] HTML elements found:\n")
-                print(checkAlert.getText())
                 if (checkAlert == mailSentOK):
                     print("\n\t [+] Email was successfully sent.")
                     driver.quit() # closes the window
